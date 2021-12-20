@@ -5,28 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link defer rel="stylesheet" href="./data/styles.css">
+    <link rel="stylesheet" href="./data/styles.css">
     <script defer src="./data/index.js"></script>
 </head>
 <body>
-    <h1>To-Do List</h1>
+    <div id='header'>
+        <h1>To-Do List</h1>
+        <input type='button' id='toggleForm' value='Show/Hide Input'></h3>
+        <h2 id='todayDate'></h2>
+    </div>
     <form>
-        <label for="taskInput">Add New Task</label>
+        <label for="taskInput">New Task Description</label>
         <input type="text" id="taskInput">
         <label for="dueDate">Due Date</label>
         <input type="date" id="dueDate">
-        <input type="button" id='submitBtn' value="Submit">
+        <input type="button" id='submitBtn' value="Add">
     </form>
-    <div>
+    <!-- this div for titles etc. everything that goes before to do list content area -->
+    <div class='main'>
         <h2>Things To Do</h2>
-        <div id="descriptionContainer">
-            <h3>Description</h2>
-            <div id="description"></div>
+        <div class="descriptionContainer">
+            <h3>Description</h3>
         </div>
-        <div id="displayDateContainer">
+        <div class="displayDateContainer">
             <h3>Due Date</h3>
-            <div id="displayDate"></div>
         </div>
     </div>
+    <hr>
+    <!-- this div to put content in -->
+    <div class=listContainer></div>
+    <hr>
+    <!-- this div for progress bar section -->
+    <div id=progressBarContainer>
+        <div id = progressBarBackground></div>
+        <div id='progressBar'></div>
+        <div id='progressBarText'>0/0 Tasks Completed (0 Hidden)</div>
+    </div>
+    <div >
+        <input id='toggleAll' type="button" value="Show/Hide all completed tasks" onclick=toggleAll()>
+    </div>
+    <br>
+    <div id = 'hiddenTasks'>(0 Hidden Tasks)</div>
+    <br>
+    <br>
+    <input type="button" class='delete' id='deleteAllChecked' value='Delete all checked tasks' onclick=deleteAllChecked()>
+    <br>
+    <input type="button" class='delete' id='deleteAll' value='Delete all tasks' onclick=deleteAll()>
+    <br>
+    <br>
 </body>
 </html>

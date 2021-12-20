@@ -1,3 +1,135 @@
-#description{
-
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.795);
+    border:solid rgb(14, 207, 14) 5px;
+    width: 800px;
+    margin:auto;
+    margin-top: 50px;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: content-box;
+}
+#header>h1,#header>h2{
+    margin-left:10px;
+}
+#toggleForm{
+    width:70%;
+    height:50%;
+    justify-self:center;
+    align-self:center;
+    color: rgba(247, 7, 7, 0.767);
+    background-color: rgba(0, 0, 0, 0);
+    border-color: green;
+}
+#toggleForm:hover,.delete:hover{
+    background-color: rgb(14, 207, 14);
+}
+.delete{
+    justify-self:end;
+    align-self:end;
+    margin-right: 30px;
+    color: rgba(247, 7, 7, 0.767);
+    background-color: rgba(0, 0, 0, 0);
+    border-color: green;
+}
+#header{
+    width:100%;
+    align-self:start;
+    display:grid;
+    grid-template-columns: 80% 20%;
+}
+hr{
+    width: inherit;
+    border: none;
+    border-top:solid rgb(14, 207, 14) 1px;
+}
+.main{
+    width:inherit;
+    display: grid;  
+    grid-template:
+    "head head head head" 50px
+    "descriptionHeader descriptionHeader displayDateHeader buttonHeader" 50px /
+    5% 50% 30% 15%;
+    place-items: center;
+}
+.listContainer{
+    width:inherit;
+    display: grid; 
+    grid-template-columns: 5% 50% 30% 6% 9%;
+    grid-template-rows: auto;
+    justify-items: center;
+    align-items: center;
+    row-gap: 5px;
+}
+form{
+    margin:10px;
+}
+.main > h2{
+    margin:auto;
+    grid-area: head;
+    text-decoration: underline;
+}
+.main h3{
+    text-align:center;
+    text-decoration: underline;
+}
+.descriptionContainer{
+    grid-area: descriptionHeader;
+    margin:0;
+}
+.displayDateContainer{
+    grid-area: displayDateHeader;
+    margin:0;
+}
+#submitBtn,
+#toggleAll{
+    border-color:rgba(255, 255, 255, 0.411);
+    height:30px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.384);
+}
+#submitBtn:hover,
+#toggleAll:hover{
+    background-color: rgb(14, 207, 14);
+}
+.listContainer>input:hover{
+    background-color: rgba(0, 0, 0, 0.384);
+}
+#progressBarContainer{
+    width: 600px;
+    margin: 20px;
+}
+#progressBarBackground{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit;
+    background-color: rgba(255, 255, 255, 0);
+    height: 30px;
+    color: black;
+    box-sizing:content-box;
+    border:solid rgb(15, 161, 15) 1px;
+}
+#progressBar{
+    /* make 2nd bar overlap on 1st bar */
+    position: relative;
+    top: -31px; /*height of background + 1 border thickness*/
+    left: 1px; /*move to right 1 border thickness to keep in content of background*/
+    margin: 0;
+    width: 0px; /*default width*/
+    background-color: rgb(15, 161, 15);
+    height:30px;
+}
+#progressBarText{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: inherit; 
+    height: 30px;
+    position: relative;
+    top: -61px; /*progressBarheight + backgroundheight + 1 border thickness*/
+    margin: 0;
 }
